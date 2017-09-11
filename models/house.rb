@@ -21,4 +21,57 @@ class House
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM houses ORDER BY name ASC"
+    houses = House.map_items(sql)
+    return houses
+  end
+
+  def self.find(find_id)
+    sql = "SELECT * FROM houses WHERE id = #{find_id}"
+    house = House.map_item(sql)
+    return house
+  end
+
+# Helper methods for maping
+  def self.map_items(sql)
+    houses = SqlRunner.run(sql)
+    results = houses.map {|house| House.new(house)}
+    return results
+  end
+
+  def self.map_item(sql)
+    results = Houses.map_items(sql)
+    retrun results.first() 
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

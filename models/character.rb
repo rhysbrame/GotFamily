@@ -35,27 +35,18 @@ class Character
     sql = "SELECT * FROM characters WHERE id = #{find_id}"
     character = Character.map_item(sql)
     return character
-
-    character = SqlRunner.run(sql).first
-    result = Character.new(character)
-    return result
-  end
-
-  def self.delete_all
-    sql = "DELETE FROM characters"
-    SqlRunner.run(sql)
   end
 
   #Helper methods for mapping
   def self.map_items(sql)
     characters = SqlRunner.run(sql)
-    result = characters.map { | character | Character.new(character) }
-    return result
+    results = characters.map {|character| Character.new(character) }
+    return results
   end
 
   def self.map_item(sql)
-    result = Character.map_items(sql)
-    return result.first
+    results = Character.map_items(sql)
+    return results.first()
   end
 
 end
