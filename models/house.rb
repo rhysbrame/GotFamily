@@ -33,6 +33,11 @@ class House
     return house
   end
 
+  def self.delete_all
+    sql = "DELETE FROM houses"
+    SqlRunner.run(sql)
+  end
+
 # Helper methods for maping
   def self.map_items(sql)
     houses = SqlRunner.run(sql)

@@ -37,6 +37,11 @@ class Character
     return character
   end
 
+  def self.delete_all
+    sql = "DELETE FROM characters"
+    SqlRunner.run(sql)
+  end
+
   #Helper methods for mapping
   def self.map_items(sql)
     characters = SqlRunner.run(sql)
