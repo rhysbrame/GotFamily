@@ -1,10 +1,10 @@
-require_relative( '../db/sql_runner' )
+require_relative('../db/sql_runner')
 
 class Character
 
   attr_reader :id, :fName, :sName, :gender, :house_id, :mother_id, :father_id
 
-  def initialize ( options )
+  def initialize (options)
     @id = nil || options['id'].to_i
     @fName = options['fName']
     @sName = options['sName']
@@ -18,11 +18,6 @@ class Character
     sql = "INSERT INTO characters (fname, sname, gender, house_id, mother_id, father_id ) VALUES ('#{@fName}', '#{@sName}', '#{@gender}', '#{@house_id}', '#{@mother_id}', '#{@father_id}') RETURNING id"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
-  end
-
-  def delete
-    sql = "DELETE FROM characters WHERE id = #{@id}"
-    SqlRunner.run(sql)
   end
 
   def update

@@ -3,7 +3,8 @@ DROP TABLE houses;
 
 CREATE TABLE houses(
   id SERIAL8 primary key,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL,
+  allegiance_id INT8 REFERENCES houses(id) NULL
 );
 
 CREATE TABLE characters(
