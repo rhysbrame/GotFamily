@@ -4,7 +4,7 @@ class SqlRunner
 
   def self.run( sql )
     begin
-      db = PG.connect({ dbname: 'vinyl_vault', host: 'localhost' })
+      db = PG.connect({ dbname: 'got_family', host: 'localhost' })
       result = db.exec( sql )
     ensure
       db.close

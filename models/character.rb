@@ -2,31 +2,31 @@ require_relative('../db/sql_runner')
 
 class Character
 
-  attr_reader :id, :fName, :sName, :gender, :house_id, :mother_id, :father_id
+  attr_reader :id, :firstname, :surname, :gender, :house_id, :mother_id, :father_id
 
   def initialize (options)
     @id = nil || options['id'].to_i
-    @fName = options['fName']
-    @sName = options['sName']
+    @firstname = options['firstname']
+    @surname = options['surname']
     @gender = options['gender']
     @house_id = options['house_id'].to_i
-    @mother_id = options['mother_id'].to_i
-    @father_id = options['father_id'].to_i
+    @mother_id = options['mother_id']? options['mother_id'].to_i : 'null'
+    @father_id = options['father_id']? options['father_id'].to_i : 'null'
   end
 
   def save
-    sql = "INSERT INTO characters (fname, sname, gender, house_id, mother_id, father_id ) VALUES ('#{@fName}', '#{@sName}', '#{@gender}', '#{@house_id}', '#{@mother_id}', '#{@father_id}') RETURNING id"
+    sql = "INSERT INTO characters (firstname, surname, gender, house_id, mother_id, father_id ) VALUES ('#{@firstname}', '#{@surname}', '#{@gender}', #{@house_id}, #{@mother_id}, #{@father_id} ) RETURNING id"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update
-    sql = "UPDATE characters SET (fname, sname, gender, house_id, mother_id, father_id) = ('#{@fName}', '#{@sName}', '#{@gender}', '#{@house_id}', '#{@mother_id}', '#{@father_id}') WHERE id = #{@id}"
+    sql = "UPDATE characters SET (firstname, surname, gender, house_id, mother_id, father_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@house_id}', #{@mother_id}, #{@father_id} ) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
   def self.all()
-    sql = "SELECT * FROM characters ORDER BY sname ASC, fname ASC"
+    sql = "SELECT * FROM characters ORDER BY surname ASC, firstname ASC"
     characters = Character.map_items(sql)
     return characters 
   end

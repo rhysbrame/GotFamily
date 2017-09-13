@@ -1,71 +1,100 @@
-require_relative( '../models/character' )
 require_relative( '../models/house' )
+require_relative( '../models/allegiance' )
+require_relative( '../models/character' )
 
-Houses.delete_all()
-Characters.delete_all()
+Character.delete_all()
+Allegiance.delete_all()
+House.delete_all()
 
-h1 = Genre.new({'name' => 'Stark', 'allegiance_id' => h5.id}) 
+h1 = House.new({'name' => 'Stark'}) 
 h1.save()
-
-h2 = Genre.new({'name' => 'Targaryen'})
+h2 = House.new({'name' => 'Targaryen'})
 h2.save()
-
-h3 = Genre.new({'name' => 'Lannister'})
+h3 = House.new({'name' => 'Lannister'})
 h3.save()
-
-h4 = Genre.new({'name' => 'Karstark', 'allegiance_id' => h1.id})
+h4 = House.new({'name' => 'Greyjoy'})
 h4.save()
-
-h5 = Genre.new({'name' => 'Baratheon'})
+h5 = House.new({'name' => 'Baratheon'})
 h5.save()
+h6 = House.new({'name' => 'Arryn'})
+h6.save()
+h7 = House.new({'name' => 'Tully'})
+h7.save()
+h8 = House.new({'name' => 'Casterly'})
+h8.save()
+h9 = House.new({'name' => 'Mudd'})
+h9.save()
+h10 = House.new({'name' => 'Justman'})
+h10.save()
+h11 = House.new({'name' => 'Gardener'})
+h11.save()
+h12 = House.new({'name' => 'Hoare'})
+h12.save()
+h13 = House.new({'name' => 'Frey'})
+h13.save()
+h14 = House.new({'name' => 'Durrandon'})
+h14.save()
+h15 = House.new({'name' => 'Martell'})
+h15.save()
+h16 = House.new({'name' => 'Bolton'})
+h16.save()
+h17 = House.new({'name' => 'Tyrell'})
+h17.save()
 
+# Template
+# h = House.new({'name' => ''})
+# h.save()
 
-ch1 = Character.new({'fname' => 'Ned','sname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id,'mother_id' => '','father_id' => ''})
+all1 = Allegiance.new({'houseA_id' => h1.id, 'houseB_id' => h6.id})
+all1.save()
+all2 = Allegiance.new({'houseA_id' => h1.id, 'houseB_id' => h5.id})
+all2.save()
+all3 = Allegiance.new({'houseA_id' => h5.id, 'houseB_id' => h6.id})
+all3.save()
+all4 = Allegiance.new({'houseA_id' => h1.id, 'houseB_id' => h13.id})
+all4.save()
+all5 = Allegiance.new({'houseA_id' => h13.id, 'houseB_id' => h7.id})
+all5.save()
+all6 = Allegiance.new({'houseA_id' => h3.id, 'houseB_id' => h5.id})
+all6.save()
+all7 = Allegiance.new({'houseA_id' => h1.id, 'houseB_id' => h7.id})
+all7.save()
+
+# Template
+# all = Allegiance.new({'houseA_id' => h.id, 'houseB_id' => h.id})
+# all.save()
+
+ch1 = Character.new({'firstname' => 'Ned', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id })
 ch1.save()
-
-ch2 = Character.new({'fname' => 'Catelyn', 'sname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id})
+ch2 = Character.new({'firstname' => 'Catelyn', 'surname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id })
 ch2.save()
-
-ch3 = Character.new({'fname' => 'Rob', 'sname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id,'father_id' => ch1.id})
+ch3 = Character.new({'firstname' => 'Rob', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch3.save()
-
-ch4 = Character.new({'fname' => 'Bran', 'sname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id,'father_id' => ch1.id})
+ch4 = Character.new({'firstname' => 'Bran', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch4.save()
-
-ch5 = Character.new({'fname' => 'Rikon', 'sname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id,'father_id' => ch1.id})
+ch5 = Character.new({'firstname' => 'Rikon', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch5.save()
-
-ch6 = Character.new({'fname' => 'Arya', 'sname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id, 'mother_id' => ch2.id,'father_id' => ch1.id})
+ch6 = Character.new({'firstname' => 'Arya', 'surname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch6.save()
-
-ch7 = Character.new({'fname' => 'Sansa', 'sname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id, 'mother_id' => ch2.id,'father_id' => ch1.id})
+ch7 = Character.new({'firstname' => 'Sansa', 'surname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch7.save()
-
-ch8 = Character.new({'fname' => 'Jon', 'sname' => 'Snow', 'gender' => 'm', 'house_id' => h1.id,'father_id' => ch1.id})
+ch8 = Character.new({'firstname' => 'Jon', 'surname' => 'Snow', 'gender' => 'm', 'house_id' => h1.id, 'father_id' => ch1.id })
 ch8.save()
-
-ch9 = Character.new({'fname' => 'Daenerys', 'sname' => 'Targaryen', 'gender' => 'f', 'house_id' => h2.id})
+ch9 = Character.new({'firstname' => 'Daenerys', 'surname' => 'Targaryen', 'gender' => 'f', 'house_id' => h2.id })
 ch9.save()
-
-ch10 = Character.new({'fname' => 'Tywin', 'sname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id})
+ch10 = Character.new({'firstname' => 'Tywin', 'surname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id })
 ch10.save()
-
-ch11 = Character.new({'fname' => 'Cersei', 'sname' => 'Lannister', 'gender' => 'f', 'house_id' => h3.id, 'father_id' => ch10.id})
+ch11 = Character.new({'firstname' => 'Cersei', 'surname' => 'Lannister', 'gender' => 'f', 'house_id' => h3.id, 'father_id' => ch10.id })
 ch11.save()
-
-ch12 = Character.new({'fname' => 'Jamie', 'sname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id, 'father_id' => ch11.id})
+ch12 = Character.new({'firstname' => 'Jamie', 'surname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id, 'father_id' => ch10.id  })
 ch12.save()
-
-ch13 = Character.new({'fname' => 'Joffrey', 'sname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id, 'mother_id' => ch11.id, 'father_id' => ch14.id})
-ch13.save()
-
-ch14 = Character.new({'fname' => 'Robert', 'sname' => 'Baratheon', 'gender' => 'm', 'house_id' => h5.id})
+ch14 = Character.new({'firstname' => 'Robert', 'surname' => 'Baratheon', 'gender' => 'm', 'house_id' => h5.id })
 ch14.save()
-
-ch15 = Character.new({'fname' => 'Rickard', 'sname' => 'Stark', 'gender' => 'm', 'house_id' => h4.id})
+ch13 = Character.new({'firstname' => 'Joffrey', 'surname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id, 'mother_id' => ch11.id, 'father_id' => ch14.id })
+ch13.save()
+ch15 = Character.new({'firstname' => 'Theon', 'surname' => 'Greyjoy', 'gender' => 'm', 'house_id' => h4.id })
 ch15.save()
 
 # Template
-# ch1 = Character.new({'fname' => '', 'sname' => '', 'gender' => '', 'house_id' => h.id, 'mother_id' => ch.id, 'father_id' => ch.id})
+# ch1 = Character.new({'firstname' => '', 'surname' => '', 'gender' => '', 'house_id' => h.id, 'mother_id' => ch.id, 'father_id' => ch.id})
 # ch1.save()
-
