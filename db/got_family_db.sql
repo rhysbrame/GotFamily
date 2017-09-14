@@ -1,6 +1,6 @@
-DROP TABLE characters;
-DROP TABLE allegiances;
-DROP TABLE houses;
+DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS allegiances;
+DROP TABLE IF EXISTS houses;
 
 CREATE TABLE houses(
   id SERIAL8 PRIMARY KEY,

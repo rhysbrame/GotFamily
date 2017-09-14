@@ -23,15 +23,21 @@ class Allegiance
 
   def self.all()
     sql = "SELECT * FROM allegiances"
-    houses = House.map_items(sql)
-    return houses
+    allegiances = Allegiance.map_items(sql)
+    return allegiances
   end
 
   def self.find(find_id)
     sql = "SELECT * FROM houses WHERE id = #{find_id}"
-    house = House.map_item(sql)
-    return house
+    allegiance = Allegiance.map_item(sql)
+    return allegiance
   end
+
+  # def self.find_by_house(house_id)
+  #   sql = "SELECT * FROM houses WHERE id = #{house_id}"
+  #   houses = House.map_items(sql)
+  #   return houses
+  # end
 
   def self.delete_all
     sql = "DELETE FROM allegiances"
