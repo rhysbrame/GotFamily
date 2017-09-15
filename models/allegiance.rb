@@ -6,8 +6,8 @@ class Allegiance
 
   def initialize (options)
     @id = options['id'].to_i
-    @a_id = options['a_id']
-    @b_id = options['b_id']
+    @a_id = options['a_id'].to_i
+    @b_id = options['b_id'].to_i
   end
 
   def save
@@ -28,7 +28,7 @@ class Allegiance
   end
 
   def self.find(find_id)
-    sql = "SELECT * FROM houses WHERE id = #{find_id}"
+    sql = "SELECT * FROM allegiances WHERE id = #{find_id}"
     allegiance = Allegiance.map_item(sql)
     return allegiance
   end
