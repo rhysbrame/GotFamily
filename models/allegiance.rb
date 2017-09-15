@@ -5,7 +5,7 @@ class Allegiance
   attr_reader :id, :a_id, :b_id
 
   def initialize (options)
-    @id = options['id'].to_i,
+    @id = options['id'].to_i
     @a_id = options['a_id']
     @b_id = options['b_id']
   end
