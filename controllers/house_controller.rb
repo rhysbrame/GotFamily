@@ -1,5 +1,4 @@
 require_relative( '../models/house' )
-require_relative( '../models/allegiance' )
 
 get '/houses/' do
   redirect '/houses'
@@ -22,7 +21,6 @@ end
 
 get '/houses/:id' do
   @house = House.find(params[:id])
-  @houses = House.all()
   erb ( :'houses/show' )
 end
 
@@ -31,11 +29,11 @@ get '/houses/:id/edit' do
   erb ( :'houses/edit')
 end
 
-# post '/houses/:id' do
-#   @house = House.new(params)
-#   @house.update
-#   erb ( :'houses/show' )
-# end
+post '/houses/:id' do
+  @house = House.new(params)
+  @house.update
+  erb ( :'houses/show' )
+end
 
 # No delete method necessary
 # post '/houses/:id/delete' do

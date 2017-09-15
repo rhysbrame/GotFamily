@@ -9,8 +9,8 @@ CREATE TABLE houses(
 
 CREATE TABLE allegiances(
   id SERIAL8 PRIMARY KEY,
-  houseA_id INT8 REFERENCES houses(id) NOT NULL,
-  houseB_id INT8 REFERENCES houses(id) NOT NULL
+  a_id INT8 REFERENCES houses(id) NOT NULL,
+  b_id INT8 REFERENCES houses(id) NOT NULL
 );
 
 CREATE TABLE characters(

@@ -20,12 +20,6 @@ class House
     SqlRunner.run(sql)
   end
 
-  def allegiances
-    sql = "SELECT * FROM allegiances a WHERE a.houseA_id = #{@id} OR a.houseb_id = #{@id}"
-    allys = Allegiance.map_items(sql)
-    return allys
-  end
-
   def self.all()
     sql = "SELECT * FROM houses ORDER BY name ASC"
     houses = House.map_items(sql)
@@ -54,34 +48,4 @@ class House
     results = House.map_items(sql)
     return results.first() 
   end
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

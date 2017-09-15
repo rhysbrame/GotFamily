@@ -1,9 +1,1 @@
 <h1><%= @house.name %></h1>
-
-<p>Allegiences:</p>
-
-<p><% @house.allegiances.each do |allys| %></p>
-<p><%= friend = allys.id.first().to_i %></p>
-<p><%= @houses.find(friend).name                  %></p>
-<p><%=                          %></p>
-<p><% end                       %></p>
