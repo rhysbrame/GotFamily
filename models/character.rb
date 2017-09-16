@@ -12,16 +12,17 @@ class Character
     @house_id = options['house_id'].to_i
     @mother_id = options['mother_id']? options['mother_id'].to_i : 'null'
     @father_id = options['father_id']? options['father_id'].to_i : 'null'
+    @religion_id = options['religion_id']? options['religion_id'].to_i : 'null'
   end
 
   def save
-    sql = "INSERT INTO characters (firstname, surname, gender, house_id, mother_id, father_id ) VALUES ('#{@firstname}', '#{@surname}', '#{@gender}', #{@house_id}, #{@mother_id}, #{@father_id} ) RETURNING id"
+    sql = "INSERT INTO characters (firstname, surname, gender, house_id, mother_id, father_id, religion_id ) VALUES ('#{@firstname}', '#{@surname}', '#{@gender}', #{@house_id}, #{@mother_id}, #{@father_id}, #{@religion_id} ) RETURNING id"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update
-    sql = "UPDATE characters SET (firstname, surname, gender, house_id, mother_id, father_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@house_id}', #{@mother_id}, #{@father_id} ) WHERE id = #{@id}"
+    sql = "UPDATE characters SET (firstname, surname, gender, house_id, mother_id, father_id, religion_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@house_id}', #{@mother_id}, #{@father_id}, #{@religion_id} ) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

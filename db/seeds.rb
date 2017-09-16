@@ -1,3 +1,4 @@
+require_relative( '../models/religion' )
 require_relative( '../models/house' )
 require_relative( '../models/allegiance' )
 require_relative( '../models/character' )
@@ -5,14 +6,34 @@ require_relative( '../models/character' )
 Character.delete_all()
 Allegiance.delete_all()
 House.delete_all()
+Religion.delete_all()
 
-h1 = House.new({'name' => 'Stark'}) 
+r1 = Religion.new({'name' => 'Old Gods of the Forest'})
+r1.save()
+r2 = Religion.new({'name' => 'Faith of the Seven'})
+r2.save()
+r3 = Religion.new({'name' => 'Drowned God'})
+r3.save()
+r4 = Religion.new({"name" => "R''hllor, the Lord of Light"})
+r4.save()
+
+
+h1 = House.new({
+  'name' => 'Stark', 
+  'sigil_link' => '../public/sigils/stark.png', 
+  'sigil_script' => 'A grey direwolf on a white field.', 
+  'words' => '"Winter Is Coming"', 
+  'titles' => 'Lords of Winterfell', 
+  'seat' => 'Winterfell', 
+  'region' => 'The North', 
+  'religion_id' => r1.id 
+}) 
 h1.save()
-h2 = House.new({'name' => 'Targaryen'})
+h2 = House.new({'name' => 'Targaryen', 'sigil_link' => '../public/sigils/targaryen.png', 'sigil_script' => 'A red three-headed dragon, on a black field.', 'words' => '"Fire and Blood"', 'titles' => 'Lords of Dragonstone', 'seat' => 'Dragonstone', 'region' => 'Dragonstone', 'religion_id' => r2.id })
 h2.save()
-h3 = House.new({'name' => 'Lannister'})
+h3 = House.new({'name' => 'Lannister', 'sigil_link' => '../public/sigils/lannister.png', 'sigil_script' => 'A golden lion rampant on a crimson field.', 'words' => '"Hear Me Roar!"', 'titles' => 'Kings of the Andals and the First Men', 'seat' => 'Casterly Rock', 'region' => 'Westerlands', 'religion_id' => r2.id })
 h3.save()
-h4 = House.new({'name' => 'Greyjoy'})
+h4 = House.new({'name' => 'Greyjoy', 'sigil_link' => '../public/sigils/greyjoy.png', 'sigil_script' => 'A golden kraken on a black field', 'words' => '"We do not sow"', 'titles' => 'Kings of the Iron Islands', 'seat' => 'Pyke', 'region' => 'Iron Islands', 'religion_id' => r3.id })
 h4.save()
 h5 = House.new({'name' => 'Baratheon'})
 h5.save()
@@ -42,7 +63,16 @@ h17 = House.new({'name' => 'Tyrell'})
 h17.save()
 
 # Template
-# h = House.new({'name' => ''})
+# h = House.new({
+#   'name' => '', 
+#   'sigil_link' => '../public/sigils/.png', 
+#   'sigil_script' => '', 
+#   'words' => '', 
+#   'titles' => '', 
+#   'seat' => '', 
+#   'region' => '', 
+#   'religion_id' => r.id
+# })
 # h.save()
 
 all1 = Allegiance.new({'a_id' => h1.id, 'b_id' => h6.id})
@@ -64,7 +94,7 @@ all7.save()
 # all = Allegiance.new({'a_id' => h.id, 'b_id' => h.id})
 # all.save()
 
-ch1 = Character.new({'firstname' => 'Ned', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id })
+ch1 = Character.new({'firstname' => 'Ned', 'surname' => 'Stark', 'gender' => 'm', 'pic_link' => '/pictures', 'house_id' => h1.id })
 ch1.save()
 ch2 = Character.new({'firstname' => 'Catelyn', 'surname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id })
 ch2.save()
