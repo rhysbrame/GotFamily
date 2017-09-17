@@ -20,7 +20,7 @@ r4.save()
 
 h1 = House.new({
   'name' => 'Stark', 
-  'sigil_link' => '../public/sigils/stark.png', 
+  'sigil_link' => '/sigils/stark.png', 
   'sigil_script' => 'A grey direwolf on a white field.', 
   'words' => '"Winter Is Coming"', 
   'titles' => 'Lords of Winterfell', 
@@ -29,11 +29,11 @@ h1 = House.new({
   'religion_id' => r1.id 
 }) 
 h1.save()
-h2 = House.new({'name' => 'Targaryen', 'sigil_link' => '../public/sigils/targaryen.png', 'sigil_script' => 'A red three-headed dragon, on a black field.', 'words' => '"Fire and Blood"', 'titles' => 'Lords of Dragonstone', 'seat' => 'Dragonstone', 'region' => 'Dragonstone', 'religion_id' => r2.id })
+h2 = House.new({'name' => 'Targaryen', 'sigil_link' => '/sigils/targaryen.png', 'sigil_script' => 'A red three-headed dragon, on a black field.', 'words' => '"Fire and Blood"', 'titles' => 'Lords of Dragonstone', 'seat' => 'Dragonstone', 'region' => 'Dragonstone', 'religion_id' => r2.id })
 h2.save()
-h3 = House.new({'name' => 'Lannister', 'sigil_link' => '../public/sigils/lannister.png', 'sigil_script' => 'A golden lion rampant on a crimson field.', 'words' => '"Hear Me Roar!"', 'titles' => 'Kings of the Andals and the First Men', 'seat' => 'Casterly Rock', 'region' => 'Westerlands', 'religion_id' => r2.id })
+h3 = House.new({'name' => 'Lannister', 'sigil_link' => '/sigils/lannister.png', 'sigil_script' => 'A golden lion rampant on a crimson field.', 'words' => '"Hear Me Roar!"', 'titles' => 'Kings of the Andals and the First Men', 'seat' => 'Casterly Rock', 'region' => 'Westerlands', 'religion_id' => r2.id })
 h3.save()
-h4 = House.new({'name' => 'Greyjoy', 'sigil_link' => '../public/sigils/greyjoy.png', 'sigil_script' => 'A golden kraken on a black field', 'words' => '"We do not sow"', 'titles' => 'Kings of the Iron Islands', 'seat' => 'Pyke', 'region' => 'Iron Islands', 'religion_id' => r3.id })
+h4 = House.new({'name' => 'Greyjoy', 'sigil_link' => '/sigils/greyjoy.png', 'sigil_script' => 'A golden kraken on a black field', 'words' => '"We do not sow"', 'titles' => 'Kings of the Iron Islands', 'seat' => 'Pyke', 'region' => 'Iron Islands', 'religion_id' => r3.id })
 h4.save()
 h5 = House.new({'name' => 'Baratheon'})
 h5.save()
@@ -65,7 +65,7 @@ h17.save()
 # Template
 # h = House.new({
 #   'name' => '', 
-#   'sigil_link' => '../public/sigils/.png', 
+#   'sigil_link' => '/sigils/.png', 
 #   'sigil_script' => '', 
 #   'words' => '', 
 #   'titles' => '', 
