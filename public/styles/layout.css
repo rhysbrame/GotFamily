@@ -1,4 +1,5 @@
 body {
-  background: url('/sigils/floral-old-paper-or-parchment.jpg');
+  background: url('/images/background.jpg');
   background-size: 100%;
+  font-family: 'Cinzel';font-size: 22px;
 }
