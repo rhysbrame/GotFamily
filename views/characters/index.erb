@@ -1,3 +1,8 @@
+<h1>Characters</h1>
+
 <p><% @characters.each do |character| %></p>
-<p><a href="/characters/<%= character.id%>">Character: <%= character.firstname%></a></p>
+<p><a href="/characters/<%= character.id%>">
+  <%= character.firstname%>
+  <%= character.surname%>
+  </a></p>
 <p><% end %></p>

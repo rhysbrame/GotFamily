@@ -2,3 +2,21 @@
   <%= @character.firstname %>
   <%= @character.surname %>  
 </h1>
+<h2>
+  <%= @character.gender %>
+</h2>
+<p>
+  
+  <%= @character.house(@character.house_id).name %>
+</p>
+<p>
+  <%= @character.mother_id %>
+  <%= @character.mother(@character.mother_id).name %>
+</p>
+<p>
+  <%= @character.father_id %>
+</p>
+<p>
+  <%= @character.religion_id %>
+</p>
+

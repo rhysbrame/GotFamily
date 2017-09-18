@@ -1,4 +1,6 @@
+<h1>The Houses of Westeros</h1>
+
 <p><% @houses.each do |house| %></p>
-<p><a href="/houses/<%= house.id%>">House: <%= house.name%></a></p>
+<p><a href="/houses/<%= house.id%>">House <%= house.name%></a></p>
 <p><% end %></p>
 

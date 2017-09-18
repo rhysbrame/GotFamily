@@ -1,4 +1,5 @@
 require_relative( '../models/allegiance' )
+require_relative( '../models/house' )
 
 get '/allegiances/' do
   redirect '/allegiances'
@@ -6,6 +7,7 @@ end
 
 get '/allegiances' do
   @allegiances = Allegiance.all()
+  @houses = House.all()
   erb(:'allegiances/index')
 end
 
@@ -21,6 +23,7 @@ end
 
 get '/allegiances/:id' do
   @allegiance = Allegiance.find(params[:id])
+  @houses = House.all()
   erb ( :'allegiances/show' )
 end
 

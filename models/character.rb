@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Character
 
-  attr_reader :id, :firstname, :surname, :gender, :house_id, :mother_id, :father_id
+  attr_reader :id, :firstname, :surname, :gender, :house_id, :mother_id, :father_id, :religion_id
 
   def initialize (options)
     @id = nil || options['id'].to_i
@@ -24,6 +24,18 @@ class Character
   def update
     sql = "UPDATE characters SET (firstname, surname, gender, house_id, mother_id, father_id, religion_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@house_id}', #{@mother_id}, #{@father_id}, #{@religion_id} ) WHERE id = #{@id}"
     SqlRunner.run(sql)
+  end
+
+  def house(id)
+    sql = "SELECT * FROM houses WHERE id = #{id}"
+    house = House.map_item(sql)
+    return house
+  end
+
+  def mother(id)
+    sql = "SELECT * FROM characters WHERE id = #{id}"
+    character = Character.map_item(sql)
+    return character
   end
 
   def self.all()

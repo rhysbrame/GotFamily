@@ -1,6 +1,10 @@
 <h1>Great House <%= @house.name %></h1>
-<h1><%= @house.id %></h1>
-<%= @house.sigil_link %>
 <img src="<%= @house.sigil_link %>">
-<h1><%= @house.id %></h1>
+<% @house.sigil_link %>
+<h2><%= @house.sigil_script %></h2>
+<h2><%= @house.words %></h2>
+<h2><%= @house.titles %></h2>
+<h2><%= @house.seat %></h2>
+<h2><%= @house.region %></h2>
+<h2><%= @house.religion_id %></h2>
 

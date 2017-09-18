@@ -1,5 +1,12 @@
+<h1>Allegiances</h1>
+
 <p><% @allegiances.each do |allegiance| %></p>
 <p><a href="/allegiances/<%= allegiance.id%>">Allegiance: <%= allegiance.id%></a></p>
-<p><%= allegiance.a_id%></p>
-<p><%= allegiance.b_id%></p>
+<p><% id1 = allegiance.a_id  %></p>
+<p><% id2 = allegiance.b_id  %></p>
+<p><% @id1  %></p>
+<p><% @id2  %></p>
 <p><% end %></p>
+
+
+
