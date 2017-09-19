@@ -20,7 +20,7 @@ r4.save()
 
 h1 = House.new({
   'name' => 'Stark', 
-  'sigil_link' => '/sigils/stark.png', 
+  'sigil_link' => '/images/sigils/stark.png', 
   'sigil_script' => 'A grey direwolf on a white field.', 
   'words' => '"Winter Is Coming"', 
   'titles' => 'Lords of Winterfell', 
@@ -29,38 +29,298 @@ h1 = House.new({
   'religion_id' => r1.id 
 }) 
 h1.save()
-h2 = House.new({'name' => 'Targaryen', 'sigil_link' => '/sigils/targaryen.png', 'sigil_script' => 'A red three-headed dragon, on a black field.', 'words' => '"Fire and Blood"', 'titles' => 'Lords of Dragonstone', 'seat' => 'Dragonstone', 'region' => 'Dragonstone', 'religion_id' => r2.id })
+h2 = House.new({
+  'name' => 'Targaryen', 
+  'sigil_link' => '/images/sigils/targaryen.png', 
+  'sigil_script' => 'A red three-headed dragon, on a black field.', 
+  'words' => '"Fire and Blood"', 
+  'titles' => 'Lords of Dragonstone', 
+  'seat' => 'Dragonstone', 
+  'region' => 'Dragonstone', 
+  'religion_id' => r2.id 
+})
 h2.save()
-h3 = House.new({'name' => 'Lannister', 'sigil_link' => '/sigils/lannister.png', 'sigil_script' => 'A golden lion rampant on a crimson field.', 'words' => '"Hear Me Roar!"', 'titles' => 'Kings of the Andals and the First Men', 'seat' => 'Casterly Rock', 'region' => 'Westerlands', 'religion_id' => r2.id })
+h3 = House.new({
+  'name' => 'Lannister', 
+  'sigil_link' => '/images/sigils/lannister.png', 
+  'sigil_script' => 'A golden lion rampant on a crimson field.', 
+  'words' => '"Hear Me Roar!"', 
+  'titles' => 'Kings of the Andals and the First Men', 
+  'seat' => 'Casterly Rock', 
+  'region' => 'Westerlands', 
+  'religion_id' => r2.id 
+})
 h3.save()
-h4 = House.new({'name' => 'Greyjoy', 'sigil_link' => '/sigils/greyjoy.png', 'sigil_script' => 'A golden kraken on a black field', 'words' => '"We do not sow"', 'titles' => 'Kings of the Iron Islands', 'seat' => 'Pyke', 'region' => 'Iron Islands', 'religion_id' => r3.id })
+h4 = House.new({
+  'name' => 'Greyjoy', 
+  'sigil_link' => '/images/sigils/greyjoy.png', 
+  'sigil_script' => 'A golden kraken on a black field', 
+  'words' => '"We do not sow"', 
+  'titles' => 'Kings of the Iron Islands', 
+  'seat' => 'Pyke', 
+  'region' => 'Iron Islands', 
+  'religion_id' => r3.id })
 h4.save()
-h5 = House.new({'name' => 'Baratheon'})
+h5 = House.new({
+  'name' => 'Baratheon',
+  'sigil_link' => '/images/sigils/baratheon.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h5.save()
-h6 = House.new({'name' => 'Arryn'})
+h6 = House.new({
+  'name' => 'Arryn',
+  'sigil_link' => '/images/sigils/arryn.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h6.save()
-h7 = House.new({'name' => 'Tully'})
+h7 = House.new({
+  'name' => 'Tully',
+  'sigil_link' => '/images/sigils/tully.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h7.save()
-h8 = House.new({'name' => 'Casterly'})
+h8 = House.new({
+  'name' => 'Blackwood',
+  'sigil_link' => '/images/sigils/blackwood.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id})
 h8.save()
-h9 = House.new({'name' => 'Mudd'})
+h9 = House.new({
+  'name' => 'Bolton',
+  'sigil_link' => '/images/sigils/bolton.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id})
 h9.save()
-h10 = House.new({'name' => 'Justman'})
+h10 = House.new({
+  'name' => 'Bracken',
+  'sigil_link' => '/images/sigils/bracken.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h10.save()
-h11 = House.new({'name' => 'Gardener'})
+h11 = House.new({
+  'name' => 'Cerwyn',
+  'sigil_link' => '/images/sigils/cerwyn.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id})
 h11.save()
-h12 = House.new({'name' => 'Hoare'})
+h12 = House.new({
+  'name' => 'Florent',
+  'sigil_link' => '/images/sigils/florent.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => ''})
 h12.save()
-h13 = House.new({'name' => 'Frey'})
+h13 = House.new({
+  'name' => 'Frey',
+  'sigil_link' => '/images/sigils/frey.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h13.save()
-h14 = House.new({'name' => 'Durrandon'})
+h14 = House.new({
+  'name' => 'Glover',
+  'sigil_link' => '/images/sigils/glover.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id})
 h14.save()
-h15 = House.new({'name' => 'Martell'})
+h15 = House.new({
+  'name' => 'Martell',
+  'sigil_link' => '/images/sigils/martell.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => ''})
 h15.save()
-h16 = House.new({'name' => 'Bolton'})
+h16 = House.new({
+  'name' => 'Hightower',
+  'sigil_link' => '/images/sigils/hightower.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h16.save()
-h17 = House.new({'name' => 'Tyrell'})
+h17 = House.new({
+  'name' => 'Tyrell',
+  'sigil_link' => '/images/sigils/.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id})
 h17.save()
+h18 = House.new({
+  'name' => 'Horntower', 
+  'sigil_link' => '/sigils/horntower.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id
+})
+h18.save()
+h19 = House.new({
+  'name' => 'Karstark', 
+  'sigil_link' => '/sigils/karstark.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h19.save()
+h20 = House.new({
+  'name' => 'Mallister', 
+  'sigil_link' => '/sigils/mallister.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h20.save()
+h21 = House.new({
+  'name' => 'Manderly', 
+  'sigil_link' => '/sigils/manderly.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h21.save()
+h22 = House.new({
+  'name' => 'Mormont', 
+  'sigil_link' => '/sigils/mormont.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h22.save()
+h23 = House.new({
+  'name' => 'Redwyne', 
+  'sigil_link' => '/sigils/redwyne.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id
+})
+h23.save()
+h24 = House.new({
+  'name' => 'Reed', 
+  'sigil_link' => '/sigils/reed.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h24.save()
+h25 = House.new({
+  'name' => 'Royce', 
+  'sigil_link' => '/sigils/royce.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h25.save()
+h26 = House.new({
+  'name' => 'Stokeworth', 
+  'sigil_link' => '/sigils/stokeworth.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h26.save()
+h27 = House.new({
+  'name' => 'Tarly', 
+  'sigil_link' => '/sigils/tarly.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r2.id
+})
+h27.save()
+h28 = House.new({
+  'name' => 'Umber', 
+  'sigil_link' => '/sigils/umber.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h28.save()
+h29 = House.new({
+  'name' => 'Waynewood', 
+  'sigil_link' => '/sigils/waynewood.png', 
+  'sigil_script' => '', 
+  'words' => '', 
+  'titles' => '', 
+  'seat' => '', 
+  'region' => '', 
+  'religion_id' => r1.id
+})
+h29.save()
 
 # Template
 # h = House.new({
@@ -124,6 +384,9 @@ ch13 = Character.new({'firstname' => 'Joffrey', 'surname' => 'Lannister', 'gende
 ch13.save()
 ch15 = Character.new({'firstname' => 'Theon', 'surname' => 'Greyjoy', 'gender' => 'm', 'house_id' => h4.id })
 ch15.save()
+ch16 = Character.new({'firstname' => 'Berric', 'surname' => 'Dondarion', 'gender' => 'm', 'mother_id' => ch5.id, 'father_id' => ch6.id, 'religion_id' => r4.id})
+ch16.save()
+
 
 # Template
 # ch1 = Character.new({'firstname' => '', 'surname' => '', 'gender' => '', 'house_id' => h.id, 'mother_id' => ch.id, 'father_id' => ch.id})

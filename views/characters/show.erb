@@ -6,15 +6,24 @@
   <%= @character.gender %>
 </h2>
 <p>
-  
-  <%= @character.house(@character.house_id).name %>
+  House: 
+  <%= @character.house(@character.house_id) %>
 </p>
 <p>
-  <%= @character.mother_id %>
-  <%= @character.mother(@character.mother_id).name %>
+  Mother: 
+  <% mid = @character.mother_id %>
+  <a href="/characters/<%= @character.parent(mid).id %>">
+  <%= @character.parent(mid).firstname %>
+  <%= @character.parent(mid).surname %>
+  </a>
 </p>
 <p>
-  <%= @character.father_id %>
+  Father: 
+  <% fid = @character.father_id %>
+  <a href="/characters/<%= @character.parent(fid).id %>">
+  <%= @character.parent(fid).firstname %>
+  <%= @character.parent(fid).surname %>
+  </a>
 </p>
 <p>
   <%= @character.religion_id %>

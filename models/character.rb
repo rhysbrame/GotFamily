@@ -9,7 +9,7 @@ class Character
     @firstname = options['firstname']
     @surname = options['surname']
     @gender = options['gender']
-    @house_id = options['house_id'].to_i
+    @house_id = options['house_id']? options['house_id'].to_i : 'null'
     @mother_id = options['mother_id']? options['mother_id'].to_i : 'null'
     @father_id = options['father_id']? options['father_id'].to_i : 'null'
     @religion_id = options['religion_id']? options['religion_id'].to_i : 'null'
@@ -32,7 +32,7 @@ class Character
     return house
   end
 
-  def mother(id)
+  def parent(id)
     sql = "SELECT * FROM characters WHERE id = #{id}"
     character = Character.map_item(sql)
     return character
