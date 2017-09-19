@@ -181,7 +181,7 @@ h16 = House.new({
 h16.save()
 h17 = House.new({
   'name' => 'Tyrell',
-  'sigil_link' => '/images/sigils/.png', 
+  'sigil_link' => '/images/sigils/tyrell.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -190,8 +190,8 @@ h17 = House.new({
   'religion_id' => r2.id})
 h17.save()
 h18 = House.new({
-  'name' => 'Horntower', 
-  'sigil_link' => '/sigils/horntower.png', 
+  'name' => 'Hornwood', 
+  'sigil_link' => '/images/sigils/hornwood.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -202,7 +202,7 @@ h18 = House.new({
 h18.save()
 h19 = House.new({
   'name' => 'Karstark', 
-  'sigil_link' => '/sigils/karstark.png', 
+  'sigil_link' => '/images/sigils/karstark.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -213,7 +213,7 @@ h19 = House.new({
 h19.save()
 h20 = House.new({
   'name' => 'Mallister', 
-  'sigil_link' => '/sigils/mallister.png', 
+  'sigil_link' => '/images/sigils/mallister.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -224,7 +224,7 @@ h20 = House.new({
 h20.save()
 h21 = House.new({
   'name' => 'Manderly', 
-  'sigil_link' => '/sigils/manderly.png', 
+  'sigil_link' => '/images/sigils/manderly.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -235,7 +235,7 @@ h21 = House.new({
 h21.save()
 h22 = House.new({
   'name' => 'Mormont', 
-  'sigil_link' => '/sigils/mormont.png', 
+  'sigil_link' => '/images/sigils/mormont.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -246,7 +246,7 @@ h22 = House.new({
 h22.save()
 h23 = House.new({
   'name' => 'Redwyne', 
-  'sigil_link' => '/sigils/redwyne.png', 
+  'sigil_link' => '/images/sigils/redwyne.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -257,7 +257,7 @@ h23 = House.new({
 h23.save()
 h24 = House.new({
   'name' => 'Reed', 
-  'sigil_link' => '/sigils/reed.png', 
+  'sigil_link' => '/images/sigils/reed.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -268,7 +268,7 @@ h24 = House.new({
 h24.save()
 h25 = House.new({
   'name' => 'Royce', 
-  'sigil_link' => '/sigils/royce.png', 
+  'sigil_link' => '/images/sigils/royce.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -279,18 +279,17 @@ h25 = House.new({
 h25.save()
 h26 = House.new({
   'name' => 'Stokeworth', 
-  'sigil_link' => '/sigils/stokeworth.png', 
+  'sigil_link' => '/images/sigils/stokeworth.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
   'seat' => '', 
-  'region' => '', 
-  'religion_id' => r1.id
+  'region' => ''
 })
 h26.save()
 h27 = House.new({
   'name' => 'Tarly', 
-  'sigil_link' => '/sigils/tarly.png', 
+  'sigil_link' => '/images/sigils/tarly.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -301,7 +300,7 @@ h27 = House.new({
 h27.save()
 h28 = House.new({
   'name' => 'Umber', 
-  'sigil_link' => '/sigils/umber.png', 
+  'sigil_link' => '/images/sigils/umber.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -311,8 +310,8 @@ h28 = House.new({
 })
 h28.save()
 h29 = House.new({
-  'name' => 'Waynewood', 
-  'sigil_link' => '/sigils/waynewood.png', 
+  'name' => 'Waynwood', 
+  'sigil_link' => '/images/sigils/waynwood.png', 
   'sigil_script' => '', 
   'words' => '', 
   'titles' => '', 
@@ -325,7 +324,7 @@ h29.save()
 # Template
 # h = House.new({
 #   'name' => '', 
-#   'sigil_link' => '/sigils/.png', 
+#   'sigil_link' => '/images/sigils/.png', 
 #   'sigil_script' => '', 
 #   'words' => '', 
 #   'titles' => '', 
@@ -384,8 +383,10 @@ ch13 = Character.new({'firstname' => 'Joffrey', 'surname' => 'Lannister', 'gende
 ch13.save()
 ch15 = Character.new({'firstname' => 'Theon', 'surname' => 'Greyjoy', 'gender' => 'm', 'house_id' => h4.id })
 ch15.save()
-ch16 = Character.new({'firstname' => 'Berric', 'surname' => 'Dondarion', 'gender' => 'm', 'mother_id' => ch5.id, 'father_id' => ch6.id, 'religion_id' => r4.id})
+ch16 = Character.new({'firstname' => 'Berric', 'surname' => 'Dondarion', 'gender' => 'm', 'house_id' => h5.id,  'religion_id' => r4.id})
 ch16.save()
+ch1 = Character.new({'firstname' => 'Davos', 'surname' => 'Stokeworth', 'gender' => 'm', 'house_id' => h26.id })
+ch1.save()
 
 
 # Template

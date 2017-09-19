@@ -27,6 +27,18 @@ class House
     SqlRunner.run(sql)
   end
 
+  def religion
+    sql = "SELECT * FROM religions WHERE id = #{@religion_id}"
+    religion = Religion.map_item(sql)
+    return religion
+  end
+
+  def characters
+    sql = "SELECT * FROM characters WHERE house_id = #{@id}"
+    characters = Character.map_items(sql)
+    return characters 
+  end
+
   def self.all()
     sql = "SELECT * FROM houses ORDER BY name ASC"
     houses = House.map_items(sql)

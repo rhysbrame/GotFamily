@@ -1,31 +1,67 @@
+
+<p>Mother: 
+  <% if @character.mother_id == 'null' %>
+  <%=   'Unknown' %>
+  <% else %>
+  <%    mother = @character.parent(@character.mother_id) %>
+        <a href="/characters/<%= @character.mother_id %>">
+  <%=   mother.firstname %>
+  <%=   mother.surname %>
+        </a>
+  <% end %>
+
+
+  //Father:
+  <% if @character.father_id == 'null' %>
+  <%=  'Unknown' %>
+  <% else %>
+  <%   father = @character.parent(@character.father_id) %>
+       <a href="/characters/<%= @character.father_id %>">
+  <%=  father.firstname %>
+  <%=  father.surname %>
+       </a>
+  <% end %>
+</p>
+
 <h1>
   <%= @character.firstname %>
   <%= @character.surname %>  
 </h1>
-<h2>
-  <%= @character.gender %>
-</h2>
-<p>
-  House: 
-  <%= @character.house(@character.house_id) %>
+
+<p><a href="/houses/<%= @character.house.id %>">
+  House: <%= @character.house.name %></a>
+  <p><%= @character.house.words %></p>
+  <p><%= @character.house.region %></p>
+  <p><%= @character.house.seat %></p>
 </p>
-<p>
-  Mother: 
-  <% mid = @character.mother_id %>
-  <a href="/characters/<%= @character.parent(mid).id %>">
-  <%= @character.parent(mid).firstname %>
-  <%= @character.parent(mid).surname %>
-  </a>
+
+<p>Religion:
+  <% if @character.religion_id =='null' %>
+  <%    if @character.house.religion_id == 'null' %>
+  <%=       'Unknown Religion' %>
+  <%    else %>
+  <%=      @character.house.religion.name   %>
+  <%   end  %>
+  <% else %>
+  <%=    @character.religion.name %>
+  <% end %>
+  <%  %>
 </p>
-<p>
-  Father: 
-  <% fid = @character.father_id %>
-  <a href="/characters/<%= @character.parent(fid).id %>">
-  <%= @character.parent(fid).firstname %>
-  <%= @character.parent(fid).surname %>
-  </a>
+
+<p>Children:
+  <% @character.children.each do |child| %>
+  <a href="/characters/<%= child.id %>">
+  <p><%= child.firstname %> <%= child.surname %></p></a>
+  <% end %>
 </p>
-<p>
-  <%= @character.religion_id %>
-</p>
+
+
+
+
+
+
+
+
+
+
 

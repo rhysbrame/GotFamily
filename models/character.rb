@@ -26,8 +26,8 @@ class Character
     SqlRunner.run(sql)
   end
 
-  def house(id)
-    sql = "SELECT * FROM houses WHERE id = #{id}"
+  def house()
+    sql = "SELECT * FROM houses WHERE id = #{@house_id}"
     house = House.map_item(sql)
     return house
   end
@@ -36,6 +36,18 @@ class Character
     sql = "SELECT * FROM characters WHERE id = #{id}"
     character = Character.map_item(sql)
     return character
+  end
+
+  def religion
+    sql = "SELECT * FROM religions WHERE id = #{@religion_id}"
+    religion = Religion.map_item(sql)
+    return religion
+  end
+
+  def children
+    sql = "SELECT * FROM characters WHERE mother_id = #{@id} OR father_id = #{@id}"
+    characters = Character.map_items(sql)
+    return characters 
   end
 
   def self.all()
