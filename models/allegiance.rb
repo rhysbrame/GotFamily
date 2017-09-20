@@ -21,6 +21,12 @@ class Allegiance
     SqlRunner.run(sql)
   end
 
+  def houses
+    sql = "SELECT * FROM houses WHERE id = #{@a_id} OR id = #{@b_id}"
+    houses = House.map_items(sql)
+    return houses
+  end
+
   def self.all()
     sql = "SELECT * FROM allegiances"
     allegiances = Allegiance.map_items(sql)

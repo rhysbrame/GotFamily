@@ -1,12 +1,16 @@
 <h1>Allegiances</h1>
 
-<p><% @allegiances.each do |allegiance| %></p>
-<p><a href="/allegiances/<%= allegiance.id%>">Allegiance: <%= allegiance.id%></a></p>
-<p><% id1 = allegiance.a_id  %></p>
-<p><% id2 = allegiance.b_id  %></p>
-<p><% @id1  %></p>
-<p><% @id2  %></p>
-<p><% end %></p>
+
+<% @allegiances.each do |allegiance| %>
+<p><a href="/allegiances/<%= allegiance.id%>">
+<%   allegiance.houses.each do |house| %>
+<p>
+  <%=   house.name  %>
+  <img src="<%= house.sigil_link %>">
+</p>
+<%   end %>
+Allegiance
+<% end %></p></a>
 
 
 

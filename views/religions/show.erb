@@ -1,1 +1,18 @@
 <h1><%= @religion.name %></h1>
+
+<% @religion.houses.each do |house| %>
+<h2>House <%= house.name %></h1>
+<a href="/houses/<%= house.id%>"><img src="<%= house.sigil_link %>"></a>
+<h2><%= house.seat %></h2>
+
+<h2><%  house.characters.each do |character| %></h2>
+<a href="/characters/<%= character.id %>">
+<h2><%= character.firstname %> <%= character.surname %></h2></a>
+<%      end %>
+
+<% end %>
+
+<% @religion.characters.each do |character| %>
+<a href="/characters/<%= character.id %>">
+<h2><%= character.firstname %> <%= character.surname %></h2></a>
+<% end %>

@@ -1,4 +1,6 @@
 require_relative( '../models/religion' )
+require_relative( '../models/character' )
+
 
 get '/religions/' do
   redirect '/religions'
