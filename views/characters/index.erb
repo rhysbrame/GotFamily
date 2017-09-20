@@ -2,12 +2,20 @@
 
 <% @characters.each do |character| %>
 
-<h3><a href="/characters/<%= character.id%>"><%= character.firstname%> <%= character.surname%></a><h3>
+<h3>
+  <a href="/characters/<%= character.id%>">
+  <%= character.firstname%>
+  <%= character.surname%>
+  <img src="<%= character.portrait %>">
+  </a>
+</h3>  
+
 <h5>
-<%  if character.house_id == 'null' %>
-<%=     'No House' %>
-<%  else %>
-      <a href= "/houses/<%= character.house.id %>"><%= character.house.name %></a>
-<%  end %>
-<% end %>
+  <%  if character.house_id == 'null' %>
+  <%=     'No House' %>
+  <%  else %>
+        <a href= "/houses/<%= character.house.id %>"><%= character.house.name %>
+        <img src="<%= character.house.sigil_link %>"></a>
+  <%  end %>
+  <% end %>
 </h5>
