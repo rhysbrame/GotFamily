@@ -1,8 +1,13 @@
 <h1>Characters</h1>
 
-<p><% @characters.each do |character| %></p>
+<% @characters.each do |character| %>
 
-<p><a href="/characters/<%= character.id%>"><%= character.firstname%> <%= character.surname%></a></p>
-
-<p><%=   character.house.name %></p>
-<p><%   end %></p>
+<h3><a href="/characters/<%= character.id%>"><%= character.firstname%> <%= character.surname%></a><h3>
+<h5>
+<%  if character.house_id == 'null' %>
+<%=     'No House' %>
+<%  else %>
+      <a href= "/houses/<%= character.house.id %>"><%= character.house.name %></a>
+<%  end %>
+<% end %>
+</h5>

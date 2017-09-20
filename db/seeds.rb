@@ -353,11 +353,11 @@ all7.save()
 # all = Allegiance.new({'a_id' => h.id, 'b_id' => h.id})
 # all.save()
 
-ch1 = Character.new({'firstname' => 'Ned', 'surname' => 'Stark', 'gender' => 'm', 'pic_link' => '/pictures', 'house_id' => h1.id })
+ch1 = Character.new({'firstname' => 'Eddard', 'surname' => 'Stark', 'gender' => 'm', 'portrait' => '/images/portraits/EddardStark.jpg', 'house_id' => h1.id })
 ch1.save()
 ch2 = Character.new({'firstname' => 'Catelyn', 'surname' => 'Stark', 'gender' => 'f', 'house_id' => h1.id })
 ch2.save()
-ch3 = Character.new({'firstname' => 'Rob', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
+ch3 = Character.new({'firstname' => 'Robb', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch3.save()
 ch4 = Character.new({'firstname' => 'Bran', 'surname' => 'Stark', 'gender' => 'm', 'house_id' => h1.id, 'mother_id' => ch2.id, 'father_id' => ch1.id })
 ch4.save()
@@ -381,12 +381,24 @@ ch14 = Character.new({'firstname' => 'Robert', 'surname' => 'Baratheon', 'gender
 ch14.save()
 ch13 = Character.new({'firstname' => 'Joffrey', 'surname' => 'Lannister', 'gender' => 'm', 'house_id' => h3.id, 'mother_id' => ch11.id, 'father_id' => ch14.id })
 ch13.save()
-ch15 = Character.new({'firstname' => 'Theon', 'surname' => 'Greyjoy', 'gender' => 'm', 'house_id' => h4.id })
+ch15 = Character.new({
+  'firstname' => 'Theon', 
+  'surname' => 'Greyjoy', 
+  'gender' => 'm', 
+  'house_id' => h4.id })
 ch15.save()
-ch16 = Character.new({'firstname' => 'Berric', 'surname' => 'Dondarion', 'gender' => 'm', 'house_id' => h5.id,  'religion_id' => r4.id})
+ch16 = Character.new({
+  'firstname' => 'Berric', 
+  'surname' => 'Dondarion', 
+  'gender' => 'm', 
+  'religion_id' => r4.id})
 ch16.save()
-ch1 = Character.new({'firstname' => 'Davos', 'surname' => 'Stokeworth', 'gender' => 'm', 'house_id' => h26.id })
-ch1.save()
+ch17 = Character.new({
+  'firstname' => 'Davos', 
+  'surname' => 'Stokeworth', 
+  'gender' => 'm', 
+  'house_id' => h26.id })
+ch17.save()
 
 
 # Template

@@ -31,7 +31,7 @@ CREATE TABLE characters(
   firstname VARCHAR(255) NOT NULL,
   surname VARCHAR(255) NOT NULL,
   gender CHAR(1),
-  picture_link VARCHAR(255) NULL,
+  portrait VARCHAR(255) NULL,
   house_id INT8 REFERENCES houses(id) ON DELETE CASCADE,
   mother_id INT8 REFERENCES characters(id) ON DELETE CASCADE,
   father_id INT8 REFERENCES characters(id) ON DELETE CASCADE,

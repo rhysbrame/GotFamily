@@ -2,13 +2,14 @@ require_relative('../db/sql_runner')
 
 class Character
 
-  attr_reader :id, :firstname, :surname, :gender, :house_id, :mother_id, :father_id, :religion_id
+  attr_reader :id, :firstname, :surname, :gender, :portrait, :house_id, :mother_id, :father_id, :religion_id
 
   def initialize (options)
     @id = nil || options['id'].to_i
     @firstname = options['firstname']
     @surname = options['surname']
     @gender = options['gender']
+    @portrait = options['portrait']
     @house_id = options['house_id']? options['house_id'].to_i : 'null'
     @mother_id = options['mother_id']? options['mother_id'].to_i : 'null'
     @father_id = options['father_id']? options['father_id'].to_i : 'null'
@@ -16,13 +17,13 @@ class Character
   end
 
   def save
-    sql = "INSERT INTO characters (firstname, surname, gender, house_id, mother_id, father_id, religion_id ) VALUES ('#{@firstname}', '#{@surname}', '#{@gender}', #{@house_id}, #{@mother_id}, #{@father_id}, #{@religion_id} ) RETURNING id"
+    sql = "INSERT INTO characters (firstname, surname, gender, portrait, house_id, mother_id, father_id, religion_id ) VALUES ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@portrait}', #{@house_id}, #{@mother_id}, #{@father_id}, #{@religion_id} ) RETURNING id"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update
-    sql = "UPDATE characters SET (firstname, surname, gender, house_id, mother_id, father_id, religion_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@house_id}', #{@mother_id}, #{@father_id}, #{@religion_id} ) WHERE id = #{@id}"
+    sql = "UPDATE characters SET (firstname, surname, gender, portrait, house_id, mother_id, father_id, religion_id ) = ('#{@firstname}', '#{@surname}', '#{@gender}', '#{@portrait}', '#{@house_id}', #{@mother_id}, #{@father_id}, #{@religion_id} ) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
@@ -48,6 +49,12 @@ class Character
     sql = "SELECT * FROM characters WHERE mother_id = #{@id} OR father_id = #{@id}"
     characters = Character.map_items(sql)
     return characters 
+  end
+
+  def siblings
+    sql = "SELECT * FROM characters WHERE mother_id = #{@mother_id} OR father_id = #{@father_id} EXCEPT SELECT * FROM characters WHERE id = #{@id}"
+    characters = Character.map_items(sql)
+    return characters
   end
 
   def self.all()

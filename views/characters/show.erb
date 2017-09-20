@@ -28,31 +28,55 @@
   <%= @character.surname %>  
 </h1>
 
-<p><a href="/houses/<%= @character.house.id %>">
-  House: <%= @character.house.name %></a>
-  <p><%= @character.house.words %></p>
-  <p><%= @character.house.region %></p>
-  <p><%= @character.house.seat %></p>
+<img src="<%= @character.portrait %>"></a>
+
+
+<% @character.siblings.each do |sibling| %>
+<%    if sibling.mother_id == @character.mother_id && sibling.father_id == @character.father_id %>
+        <% if sibling.gender == 'm' %>
+            <p>Brother: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
+        <% else %>    
+            <p>Sister: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
+        <% end %>    
+<%    else    %>
+        <% if sibling.gender == 'm' %>
+            <p>Half-Brother: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
+        <% else %>    
+            <p>Half-Sister: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
+        <% end %>    
+<%    end %>  
+  <% end %>
+
+<p>
+<% if @character.house_id == 'null' %>
+<%=    'No House'   %>
+<% else %>
+      <a href="/houses/<%= @character.house.id %>">House <%= @character.house.name %></a>
+<% end %>
 </p>
 
-<p>Religion:
-  <% if @character.religion_id =='null' %>
+<p>
+  <% if @character.religion_id == 'null' %>
   <%    if @character.house.religion_id == 'null' %>
   <%=       'Unknown Religion' %>
   <%    else %>
-  <%=      @character.house.religion.name   %>
+  Religion: <a href="/religions/<%= @character.house.religion_id %>"><%= @character.house.religion.name %></a>
   <%   end  %>
   <% else %>
-  <%=    @character.religion.name %>
+  Religion: <a href="/religions/<%= @character.religion_id %>"><%= @character.religion.name %></a>
   <% end %>
-  <%  %>
+  
 </p>
 
-<p>Children:
+<p>
   <% @character.children.each do |child| %>
-  <a href="/characters/<%= child.id %>">
-  <p><%= child.firstname %> <%= child.surname %></p></a>
-  <% end %>
+  
+   <% if child.gender == 'm' %>
+       <p>Son: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
+   <% else %>    
+       <p>Daughter: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
+   <% end %>     
+<% end %>
 </p>
 
 

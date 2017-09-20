@@ -1,13 +1,17 @@
 <h1>House <%= @house.name %></h1>
 <img src="<%= @house.sigil_link %>">
-<% @house.sigil_link %>
 <h2><%= @house.sigil_script %></h2>
 <h2><%= @house.words %></h2>
 <h2><%= @house.titles %></h2>
 <h2><%= @house.seat %></h2>
 <h2><%= @house.region %></h2>
-<h2><%= @house.religion_id %></h2>
 
+<% if @house.religion_id == 'null' %>
+<%=   'No religion' %>
+<% else %>
+      <h2><a href="/religions/<%=@house.religion_id%>"><%= @house.religion.name %></a></h2>
+<% end %>
+      
 <h2><%  @house.characters.each do |character| %></h2>
 <a href="/characters/<%= character.id %>">
 <h2><%= character.firstname %> <%= character.surname %></h2></a>
