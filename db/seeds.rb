@@ -399,8 +399,24 @@ ch17 = Character.new({
   'gender' => 'm', 
   'house_id' => h26.id })
 ch17.save()
+ch18 = Character.new({
+  'firstname' => 'Sandor', 
+  'surname' => 'Clegane', 
+  'gender' => 'm', 
+  'house_id' => h3.id,
+  'religion_id' => r4.id})
+ch18.save()
+
 
 
 # Template
-# ch1 = Character.new({'firstname' => '', 'surname' => '', 'gender' => '', 'house_id' => h.id, 'mother_id' => ch.id, 'father_id' => ch.id})
+# ch1 = Character.new({
+#   'firstname' => '', 
+#   'surname' => '', 
+#   'gender' => '', 
+#   'portrait' => '/images/portraits/.jpg',
+#   'house_id' => h.id, 
+#   'mother_id' => ch.id, 
+#   'father_id' => ch.id,
+#   'religion_id' => r.id })
 # ch1.save()
