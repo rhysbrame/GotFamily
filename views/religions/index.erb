@@ -2,4 +2,5 @@
 
 <p><% @religions.each do |religion| %></p>
 <p><a href="/religions/<%= religion.id%>"><%= religion.name%></a></p>
+<img src="<%= religion.symbol %>"></a>
 <p><% end %></p>

@@ -8,14 +8,16 @@ Allegiance.delete_all()
 House.delete_all()
 Religion.delete_all()
 
-r1 = Religion.new({'name' => 'Old Gods of the Forest'})
+r1 = Religion.new({'name' => 'Old Gods of the Forest', 'symbol' => '/images/religions/OldGods.jpg'})
 r1.save()
-r2 = Religion.new({'name' => 'Faith of the Seven'})
+r2 = Religion.new({'name' => 'Faith of the Seven', 'symbol' => '/images/religions/NewGods.jpg'})
 r2.save()
-r3 = Religion.new({'name' => 'Drowned God'})
+r3 = Religion.new({'name' => 'Drowned God', 'symbol' => '/images/religions/DrownedGod.jpg'})
 r3.save()
-r4 = Religion.new({"name" => "R''hllor, the Lord of Light"})
+r4 = Religion.new({"name" => "R''hllor, the Lord of Light", 'symbol' => '/images/religions/LordOfLight.jpg'})
 r4.save()
+r5 = Religion.new({"name" => "Many Faced God", 'symbol' => '/images/religions/ManyFacedGod.jpg'})
+r5.save()
 
 
 h1 = House.new({

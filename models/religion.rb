@@ -2,21 +2,22 @@ require_relative('../db/sql_runner')
 
 class Religion
 
-  attr_reader :id, :name
+  attr_reader :id, :name, :symbol
 
   def initialize (options)
     @id = nil || options['id'].to_i
     @name = options['name']
+    @symbol = options['symbol']
   end
 
   def save
-    sql = "INSERT INTO religions (name) VALUES ('#{@name}') RETURNING id"
+    sql = "INSERT INTO religions (name, symbol) VALUES ('#{@name}', '#{@symbol}') RETURNING id"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update
-    sql = "UPDATE religions SET (name) = ('#{@name}') WHERE id = #{@id}"
+    sql = "UPDATE religions SET (name, symbol) = ('#{@name}', '#{@symbol}') WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

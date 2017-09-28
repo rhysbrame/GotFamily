@@ -1,5 +1,6 @@
-
-<p>Mother: 
+<div class="wrapper">
+<div class="one">One</div>
+<div class="two">Mother: 
   <% if @character.mother_id == 'null' %>
   <%=   'Unknown' %>
   <% else %>
@@ -8,10 +9,10 @@
   <%=   mother.firstname %>
   <%=   mother.surname %>
         </a>
-  <% end %>
+  <% end %></div>
 
 
-  //Father:
+<div class="four">//Father:
   <% if @character.father_id == 'null' %>
   <%=  'Unknown' %>
   <% else %>
@@ -21,15 +22,16 @@
   <%=  father.surname %>
        </a>
   <% end %>
-</p>
+</div>  
 
-<h1>
+<div class="eight">
+  <h1>
   <%= @character.firstname %>
   <%= @character.surname %>  
 </h1>
 
 <img src="<%= @character.portrait %>">
-
+</div>
 
 <% @character.siblings.each do |sibling| %>
 <%    if sibling.mother_id == @character.mother_id && sibling.father_id == @character.father_id %>
@@ -84,7 +86,7 @@
 
 
 
-
+</div>
 
 
 

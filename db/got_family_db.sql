@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS religions;
 
 CREATE TABLE religions(
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL,
+  symbol VARCHAR(255)
 );
 
 CREATE TABLE houses(

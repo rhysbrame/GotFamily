@@ -3,3 +3,159 @@ body {
   background-size: 100%;
   font-family: 'Cinzel';font-size: 22px;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.one {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.two { 
+  grid-column: 2;
+  grid-row: 1;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.three {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.four {
+  grid-column: 4;
+  grid-row: 1;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.five {
+  grid-column: 5;
+  grid-row: 1;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.six {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.seven {
+ grid-column: 2;
+ grid-row: 2; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.eight {
+ grid-column: 3;
+ grid-row: 2; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.nine {
+ grid-column: 4;
+ grid-row: 2; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.ten {
+ grid-column: 5;
+ grid-row: 2; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.eleven {
+ grid-column: 1;
+ grid-row: 3; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.twelve {
+ grid-column: 2;
+ grid-row: 3; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.thirteen {
+ grid-column: 3;
+ grid-row: 3; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.fourteen {
+ grid-column: 4;
+ grid-row: 3; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+.fifteen {
+ grid-column: 5;
+ grid-row: 3; 
+ background-color: #444;
+ color: #fff;
+ border-radius: 5px;
+ padding: 20px;
+ font-size: 150%;
+}
+
+
+
+
+
