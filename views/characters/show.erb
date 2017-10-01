@@ -1,40 +1,41 @@
 <div class="wrapper">
-<div class="one">One</div>
-<div class="two">Mother: 
-  <% if @character.mother_id == 'null' %>
-  <%=   'Unknown' %>
-  <% else %>
-  <%    mother = @character.parent(@character.mother_id) %>
-        <a href="/characters/<%= @character.mother_id %>">
-  <%=   mother.firstname %>
-  <%=   mother.surname %>
-        </a>
-  <% end %></div>
+
+  <div class="two">Mother: 
+    <% if @character.mother_id == 'null' %>
+    <%=   'Unknown' %>
+    <% else %>
+    <%    mother = @character.parent(@character.mother_id) %>
+          <a href="/characters/<%= @character.mother_id %>">
+    <%=   mother.firstname %>
+    <%=   mother.surname %>
+          </a>
+    <% end %>
+  </div>
 
 
-<div class="four">//Father:
-  <% if @character.father_id == 'null' %>
-  <%=  'Unknown' %>
-  <% else %>
-  <%   father = @character.parent(@character.father_id) %>
-       <a href="/characters/<%= @character.father_id %>">
-  <%=  father.firstname %>
-  <%=  father.surname %>
-       </a>
-  <% end %>
-</div>  
+  <div class="four">Father:
+    <% if @character.father_id == 'null' %>
+    <%=  'Unknown' %>
+    <% else %>
+    <%   father = @character.parent(@character.father_id) %>
+         <a href="/characters/<%= @character.father_id %>">
+    <%=  father.firstname %>
+    <%=  father.surname %>
+         </a>
+    <% end %>
+  </div>  
 
-<div class="eight">
-  <h1>
-  <%= @character.firstname %>
-  <%= @character.surname %>  
-</h1>
+  <div class="eight">
+  <h3>
+    <%= @character.firstname %>
+    <%= @character.surname %>  
+  </h3>
+  <img class="portrait" src="<%= @character.portrait %>">
+  </div>
 
-<img src="<%= @character.portrait %>">
-</div>
-
-<% @character.siblings.each do |sibling| %>
-<%    if sibling.mother_id == @character.mother_id && sibling.father_id == @character.father_id %>
+  <div class="seven">
+  <% @character.siblings.each do |sibling| %>
+  <%  if sibling.mother_id == @character.mother_id && sibling.father_id == @character.father_id %>
         <% if sibling.gender == 'm' %>
             <p>Brother: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
         <% else %>    
@@ -46,18 +47,19 @@
         <% else %>    
             <p>Half-Sister: <a href="/characters/<%= sibling.id %>"><%= sibling.firstname %> <%= sibling.surname %> </a></p>
         <% end %>    
-<%    end %>  
+  <%  end %>  
   <% end %>
+  </div>
 
-<p>
-<% if @character.house_id == 'null' %>
-<%=    'No House'   %>
-<% else %>
-      <a href="/houses/<%= @character.house.id %>">House <%= @character.house.name %></a>
-<% end %>
-</p>
-
-<p>
+  <div class="nine">
+    <p>
+  <% if @character.house_id == 'null' %>
+  <%=    'No House'   %>
+  <% else %>
+        <a href="/houses/<%= @character.house.id %>">House <%= @character.house.name %></a>
+  <% end %>
+  </p>
+  <p>
   <% if @character.religion_id == 'null' %>
   <%    if @character.house.religion_id == 'null' %>
   <%=       'Unknown Religion' %>
@@ -67,25 +69,19 @@
   <% else %>
   Religion: <a href="/religions/<%= @character.religion_id %>"><%= @character.religion.name %></a>
   <% end %>
-  
-</p>
+  </p>
+  </div>
 
-<p>
-  <% @character.children.each do |child| %>
-  
-   <% if child.gender == 'm' %>
-       <p>Son: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
-   <% else %>    
-       <p>Daughter: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
-   <% end %>     
-<% end %>
-</p>
-
-
-
-
-
-
+  <div class="thirteen">
+    <% @character.children.each do |child| %>
+    
+     <% if child.gender == 'm' %>
+         <p>Son: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
+     <% else %>    
+         <p>Daughter: <a href="/characters/<%= child.id %>"><%= child.firstname %> <%= child.surname %></a></p>
+     <% end %>     
+  <% end %>
+  </div>
 </div>
 
 

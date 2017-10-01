@@ -1,7 +1,27 @@
 body {
   background: url('/images/background.jpg');
   background-size: 100%;
-  font-family: 'Cinzel';font-size: 22px;
+  font-family: 'Cinzel';
+  font-size: 20px;
+  color: black;
+}
+
+.container {
+  position: relative;
+  width: 75%;
+}
+
+.sigil {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.portrait {
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  width: 50%;
 }
 
 .wrapper {
@@ -9,150 +29,86 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-}
-
-.box {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  color: black;
+  font-size: 100%;
+  padding: 1px;
+  margin: auto;
 }
 
 .one {
   grid-column: 1;
   grid-row: 1;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .two { 
   grid-column: 2;
   grid-row: 1;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .three {
   grid-column: 3;
   grid-row: 1;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .four {
   grid-column: 4;
   grid-row: 1;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .five {
   grid-column: 5;
   grid-row: 1;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .six {
   grid-column: 1;
   grid-row: 2;
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+  margin: auto;
 }
 .seven {
  grid-column: 2;
  grid-row: 2; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .eight {
  grid-column: 3;
  grid-row: 2; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .nine {
  grid-column: 4;
  grid-row: 2; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .ten {
  grid-column: 5;
  grid-row: 2; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .eleven {
  grid-column: 1;
  grid-row: 3; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .twelve {
  grid-column: 2;
  grid-row: 3; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .thirteen {
  grid-column: 3;
  grid-row: 3; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .fourteen {
  grid-column: 4;
  grid-row: 3; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ margin: auto;
 }
 .fifteen {
  grid-column: 5;
- grid-row: 3; 
- background-color: #444;
- color: #fff;
- border-radius: 5px;
- padding: 20px;
- font-size: 150%;
+ grid-row: 3;
+ margin: auto; 
 }
 
 

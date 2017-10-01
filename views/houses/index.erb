@@ -1,7 +1,15 @@
 <h1>The Houses of Westeros</h1>
+<div class="container">
+  
+  <% @houses.each do |house| %>
+    
+    <img class="sigil" src="<%= house.sigil_link %>">
+      
+        
+          <a href="/houses/<%= house.id%>">House <%= house.name%></a>
+        
+      
 
-<% @houses.each do |house| %>
-<div><a href="/houses/<%= house.id%>">House <%= house.name%></div>
-<img src="<%= house.sigil_link %>"></a></div>
-<p><% end %></p>
-
+  <% end %>
+  
+</div>
